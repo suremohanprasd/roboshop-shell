@@ -10,7 +10,5 @@ echo -e "\e[36m>>>>>>>>>> Extract the frontend <<<<<<<<<<\e[0m"
 cd /usr/share/nginx/html
 echo -e "\e[36m>>>>>>>>>> Unzipping the file <<<<<<<<<<\e[0m"
 unzip /tmp/frontend.zip
-echo -e "\e[36m>>>>>>>>>> Enable Nginx <<<<<<<<<<\e[0m"
 systemctl enable nginx
-echo -e "\e[36m>>>>>>>>>> Restart Nginx <<<<<<<<<<\e[0m"
 systemctl restart nginx
