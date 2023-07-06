@@ -13,4 +13,4 @@ systemctl enable user
 systemctl start user
 cp mongodb.repo /etc/yum.repos.d/mongo.repo
 yum install mongodb-org-shell -y
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
+mongo --host mongodb.mohanprasads.online </app/schema/user.js
