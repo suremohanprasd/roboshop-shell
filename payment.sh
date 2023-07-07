@@ -11,7 +11,7 @@ unzip /tmp/payment.zip
 echo -e "\e[36m>>>>>>>>>> Download Dependencies <<<<<<<<<<\e[0m"
 cd /app
 pip3.6 install -r requirements.txt
-echo -e "\e[36m>>>>>>>>>> Copy the file payment.service  <<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>> Set SystemD Payment Service  <<<<<<<<<<\e[0m"
 cp payment.service /etc/systemd/system/payment.service
 systemctl daemon-reload
 systemctl enable payment

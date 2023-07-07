@@ -12,7 +12,7 @@ echo -e "\e[36m>>>>>>>>>> Download the dependencies and bulid & Application <<<<
 cd /app
 mvn clean package
 mv target/shipping-1.0.jar shipping.jar
-echo -e "\e[36m>>>>>>>>>> Copy the Shipping.service file <<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>> Set SystemD Shipping Service <<<<<<<<<<\e[0m"
 cp shipping.service /etc/systemd/system/shipping.service
 systemctl daemon-reload
 systemctl enable shipping

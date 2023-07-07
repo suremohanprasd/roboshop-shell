@@ -14,7 +14,7 @@ unzip /tmp/catalogue.zip
 cd /app
 echo -e "\e[36m>>>>>>>>>> Install npm <<<<<<<<<<\e[0m"
 npm install
-echo -e "\e[36m>>>>>>>>>> Copy catalogue.service <<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>> set SystemD Catalogue Service <<<<<<<<<<\e[0m"
 cp catalogue.sh /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue

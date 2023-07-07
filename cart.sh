@@ -12,7 +12,7 @@ unzip /tmp/cart.zip
 echo -e "\e[36m>>>>>>>>>> Download the Dependencies <<<<<<<<<<\e[0m"
 cd /app
 npm install
-echo -e "\e[36m>>>>>>>>>> Copy the Cart service file <<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>> Set SystemD Cart Service <<<<<<<<<<\e[0m"
 cp cart.service /etc/systemd/system/cart.service
 systemctl daemon-reload
 systemctl enable cart

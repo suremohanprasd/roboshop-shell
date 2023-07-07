@@ -12,7 +12,7 @@ unzip /tmp/user.zip
 cd /app
 echo -e "\e[36m>>>>>>>>>> Install npm <<<<<<<<<<\e[0m"
 npm install
-echo -e "\e[36m>>>>>>>>>> Copy user.service <<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>> Set SystemD User Service <<<<<<<<<<\e[0m"
 cp user.service /etc/systemd/system/user.service
 systemctl daemon-reload
 systemctl enable user
