@@ -15,7 +15,7 @@ cd /app
 echo -e "\e[36m>>>>>>>>>> Install npm <<<<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>>>> set SystemD Catalogue Service <<<<<<<<<<\e[0m"
-cp catalogue.sh /etc/systemd/system/catalogue.service
+cp catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
