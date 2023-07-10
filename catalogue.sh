@@ -25,4 +25,4 @@ cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>>>>>> Install Mongod <<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>>>>>> Load Schema <<<<<<<<<<\e[0m"
-mongo --host mondodb.mohanprasads.online </app/schema/catalogue.js
+mongo --host mongodb.mohanprasads.online </app/schema/catalogue.js
