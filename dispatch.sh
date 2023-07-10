@@ -2,6 +2,7 @@ echo -e "\e[36m>>>>>>>>>> Install golang <<<<<<<<<<\e[0m"
 yum install golang -y
 echo -e "\e[36m>>>>>>>>>> Add user Roboshop <<<<<<<<<<\e[0m"
 useradd roboshop
+rm -rf /app
 mkdir /app
 echo -e "\e[36m>>>>>>>>>> Download Application Code <<<<<<<<<<\e[0m"
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
@@ -14,7 +15,7 @@ go mod init dispatch
 go get
 go build
 echo -e "\e[36m>>>>>>>>>> Set SystemD payment service <<<<<<<<<<\e[0m"
-cp dispatch.service /etc/systemd/system/dispatch.service
+cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 systemctl enable dispatch
 systemctl start dispatch
