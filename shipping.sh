@@ -2,6 +2,7 @@ echo -e "\e[36m>>>>>>>>>> Install Maven <<<<<<<<<<\e[0m"
 yum install maven -y
 echo -e "\e[36m>>>>>>>>>> Add User Roboshop <<<<<<<<<<\e[0m"
 useradd roboshop
+rm -rf /app
 mkdir /app
 echo -e "\e[36m>>>>>>>>>> Download Application Code <<<<<<<<<<\e[0m"
 curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
@@ -13,7 +14,7 @@ cd /app
 mvn clean package
 mv target/shipping-1.0.jar shipping.jar
 echo -e "\e[36m>>>>>>>>>> Set SystemD Shipping Service <<<<<<<<<<\e[0m"
-cp shipping.service /etc/systemd/system/shipping.service
+cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
 systemctl daemon-reload
 systemctl enable shipping
 systemctl start shipping
