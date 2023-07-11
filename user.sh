@@ -1,8 +1,10 @@
+source common.sh
+
 echo -e "\e[36m>>>>>>>>>> Download NodeJS repos <<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 echo -e "\e[36m>>>>>>>>>> Install NodeJS <<<<<<<<<<\e[0m"
 yum install nodejs -y
-useradd roboshop
+useradd ${app_user}
 rm -rf /app
 mkdir /app
 echo -e "\e[36m>>>>>>>>>> Download Application Code <<<<<<<<<<\e[0m"

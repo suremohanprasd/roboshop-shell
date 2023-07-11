@@ -1,7 +1,9 @@
+source common.sh
+
 echo -e "\e[36m>>>>>>>>>> Install Maven <<<<<<<<<<\e[0m"
 yum install maven -y
 echo -e "\e[36m>>>>>>>>>> Add User Roboshop <<<<<<<<<<\e[0m"
-useradd roboshop
+useradd ${app_user}
 rm -rf /app
 mkdir /app
 echo -e "\e[36m>>>>>>>>>> Download Application Code <<<<<<<<<<\e[0m"
