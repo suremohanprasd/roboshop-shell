@@ -1,7 +1,7 @@
 
 source common.sh
 
-dirname
+dirname $0
 
 exit
 echo -e "\e[36m>>>>>>>>>> Setup NodeJS <<<<<<<<<<\e[0m"
