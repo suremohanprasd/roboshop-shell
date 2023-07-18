@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+rabbitmq_appuser_password=$1
 
 echo -e "\e[36m>>>>>>>>>> Install python36 <<<<<<<<<<\e[0m"
 yum install python36 gcc python3-devel -y
@@ -17,6 +18,7 @@ echo -e "\e[36m>>>>>>>>>> Download Dependencies <<<<<<<<<<\e[0m"
 cd /app
 pip3.6 install -r requirements.txt
 echo -e "\e[36m>>>>>>>>>> Set SystemD Payment Service  <<<<<<<<<<\e[0m"
+sed -i -e "s|rabbitmq_appuser_password|$rabbitmq_appuser_password|" ${script_path}/payment.service
 cp ${script_path}/payment.service /etc/systemd/system/payment.service
 systemctl daemon-reload
 systemctl enable payment
