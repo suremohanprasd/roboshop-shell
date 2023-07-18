@@ -1,4 +1,5 @@
-source common.sh
+script_path=$(dirname $0)
+source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>>>> Setup Nodejs Repos <<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
@@ -18,12 +19,12 @@ cd /app
 echo -e "\e[36m>>>>>>>>>> Install npm <<<<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>>>> set SystemD Catalogue Service <<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
+cp ${script_path}/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl restart catalogue
 echo -e "\e[36m>>>>>>>>>> Copy mongodb repo file <<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongodb.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>>>>>> Install Mongod <<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>>>>>> Load Schema <<<<<<<<<<\e[0m"
