@@ -1,7 +1,8 @@
+script_path=$(dirname $0)
+source ${script_path}/common.sh
 
-source common.sh
+echo Iam Mohan
 
-dirname $0
 
 exit
 echo -e "\e[36m>>>>>>>>>> Setup NodeJS <<<<<<<<<<\e[0m"
